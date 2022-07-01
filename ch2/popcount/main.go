@@ -39,4 +39,13 @@ func PopCountLoop(x uint64) int {
 	return n
 }
 
+// PopCountShift returns the population cound (number of set bits) of x using a shift.
+func PopCountShift(x uint64) int {
+	n := 0
+	for i := uint64(0); i < 64; i++ {
+		n += int(x >> i & 1)
+	}
+	return n
+}
+
 //!-
