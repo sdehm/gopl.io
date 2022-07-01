@@ -48,4 +48,14 @@ func PopCountShift(x uint64) int {
 	return n
 }
 
+// PopCountClear returns the population count (number of set bits) of x using a clear.
+func PopCountClear(x uint64) int {
+	n := 0
+	for x != 0 {
+		x = x & (x - 1)
+		n++
+	}
+	return n
+}
+
 //!-
